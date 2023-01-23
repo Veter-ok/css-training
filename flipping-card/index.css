@@ -1,0 +1,181 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.bg {
+	background-color: rgb(74, 72, 66);
+	width: 100%;
+	height: 100%;
+}
+
+.card {
+	position: relative;
+	width: 80%;
+	height: 50%;
+	top: 25%;
+	left: 10%;
+}
+
+.flip:hover {
+	transform: rotateX(180deg) translate3d(0,0,0);
+	box-shadow: 8px -10px 15px 0 rgba(0,0,0,0.5);
+}
+
+.flip {
+	width:100%;
+    height: 100%;
+	border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    perspective: 1000px;
+    background: #FFCE4E;
+}
+
+.face {
+	z-index: 2;
+	backface-visibility: hidden;
+}
+
+.face img {
+	position: relative;
+	top: 69px;
+	left: 29%;
+	animation-name: bicycle;
+	animation-duration: 0.9s;
+	animation-iteration-count: infinite;
+}
+
+.back {
+	z-index: 1;
+	transform: rotateX(180deg);
+	backface-visibility: hidden;
+}
+
+.line {
+	position: absolute;
+	border-radius: 15px;
+	height: 4px;
+	top: 73%;
+	left: 20%;
+	background-color: rgb(74, 72, 66);
+	animation-name: bicycle_ride;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.line-1 {
+	width: 30px;
+}
+
+.line-2 {
+	width: 10px;
+	animation-delay: 0.15s;
+}
+
+.line-3 {
+	width: 15px;
+	animation-delay: 0.25s;
+}
+
+.line-4 {
+	width: 20px;
+	animation-delay: 0.4s;
+}
+
+.back img {
+	position: relative;
+	z-index: 5;
+	top: 10px;
+	left: 25%;
+	animation-name: helicopter;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.hp-line {
+	position: absolute;
+	z-index: 2;
+	border-radius: 15px;
+	height: 4px;
+	background-color: rgb(74, 72, 66);
+	animation-name: helicopter_flying;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.hp-line-1 {
+	width: 30px;
+	top: 20px;
+	left: 0;
+}
+
+.hp-line-2 {
+	width: 15px;
+	top: 40px;
+	left: 5px;
+}
+
+.hp-line-3 {
+	width: 20px;
+	top: 70px;
+	left: 10px;
+}
+
+.hp-line-4 {
+	width: 35px;
+	top: 100px;
+	left: 15px;
+}
+
+.hp-line-5 {
+	width: 35px;
+	top: 70px;
+	left: 100px;
+}
+
+
+@keyframes bicycle_ride {
+	0% {
+		transform: translateX(170px);
+	}
+}
+
+@keyframes bicycle {
+	0%, 100% {
+		transform: scaleY(1);
+	}
+	50% {
+		transform: scaleY(1.05);
+	}
+}
+
+@keyframes helicopter {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(15px);
+	}
+}
+
+@keyframes helicopter_flying {
+	0% {
+		transform: translateX(200px);
+	}
+}
